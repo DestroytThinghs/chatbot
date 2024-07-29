@@ -1,0 +1,128 @@
+// >>-- 95 Box css start --<<
+
+.box-layout {
+  background-image: url("../images/background/box-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  .app-content{
+    background-color: var(--bodybg-color);
+  }
+  .code-container{
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 1400px !important;
+  }
+  .Implements-tabs{
+    .text-start{
+      text-align: center !important;
+    }
+  }
+
+  .app-wrapper {
+    margin: auto;
+    max-width: 1400px;
+  }
+  div {
+    > footer {
+      left: 50%;
+      max-width: 1400px;
+      transform: translate(-50%, 0);
+    }
+  }
+  header {
+    &.header-main {
+      left: calc(50% - 10px);
+      max-width: 1400px;
+      transform: translate(-50%, 0);
+    }
+  }
+  .product-details-contentbox {
+    .product-detailbox {
+      flex-wrap: wrap;
+      div {
+        & + {
+          div {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .product-details-table {
+    .text-end {
+      display: none;
+    }
+  }
+  .orders-timeline {
+    .app-timeline-info-text{
+      .d-flex{
+        flex-wrap: wrap;
+        h6{
+          margin-right: 0 !important;
+        }
+        span{
+          margin-left: 0 !important;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+  .checkout-tabs-step {
+    padding: 0.625rem;
+    h6{
+      font-size: 15px !important;
+    }
+  }
+  .wishlist-btn{
+    .btn{
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+  .order-list-header{
+    .nav-pills-box{
+      .nav-link{
+        padding: 0.5rem 0.9rem;
+      }
+    }
+  }
+
+  .Implements-tabs{
+    .nav-tabs{
+      .nav-item{
+        .nav-link{
+          width: 100%;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  .box-col-5 {
+    flex: 0 0 auto;
+    width: 35%;
+  }
+  .box-col-7 {
+    flex: 0 0 auto;
+    width: 65%;
+  }
+  
+  @media screen and (max-width: 1199px) {
+    .product-details-table {
+      .text-end {
+        display: block;
+      }
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .chat-container-box {
+      .box-col-7 {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// >>-- 95 Box css start --<<

@@ -1,0 +1,71 @@
+// >>-- 55 Blog css start --<<
+
+.img-hover-zoom {
+    max-height: 220px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    img {
+        transition: transform 0.5s ease-out;
+    }
+    &:hover {
+        img {
+            transform: scale(1.1);
+        }
+    }
+}
+.tag-container{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    .badge{
+        color: var(--white);
+        background-color:  rgba(var(--dark), 0.8);
+    }
+}
+.app-carousel{
+    .carousel-inner{
+        position: relative;
+        border-radius: 8px;
+        .carousel-item {
+            &::before{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6);
+                z-index: 1;
+            }
+        }
+        .carousel-caption{
+            z-index: 2;
+            text-align: start;
+            position: absolute;
+            left: 20px;
+            bottom: 0;
+        }
+    }
+}
+.bloglink{
+    &:hover{
+        color: rgba(var(--primary),1);
+    }
+}
+.blog-list{
+    li{
+        color: rgba(var(--secondary),1);
+        padding: 5px 0px;
+    }
+
+}
+.vertical-blog{
+    a{
+        height: 100%;
+        display: block;
+        img{
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+}
+// >>-- 55 Blog css end --<<

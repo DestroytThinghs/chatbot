@@ -1,0 +1,365 @@
+// >>-- 97 Educathion css start --<<
+
+.rating-list {
+    li {
+        padding: 12px 0px;
+        &.rating-content {
+            position: relative;
+            .rating-image {
+                position: absolute;
+                left: 0;
+                top: 20px;
+            }
+        }
+    }
+}
+.user-list {
+    position: relative;
+    &:hover {
+        h6 {
+            color: rgba(var(--primary), 1);
+        }
+    }
+    .user-image {
+        position: absolute;
+        left: 0;
+        top: 4px;
+    }
+}
+.education-card {
+    position: relative;
+    border-radius: inherit;
+    background-image: url(../images/dashboard/education/02.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center right;
+    overflow: hidden;
+    .education-image {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        .animate__animated {
+            &.animate__slower {
+                animation-duration: 45s !important;
+            }
+        }
+    }
+}
+.progress-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .text-content {
+        div {
+            p {
+                white-space: nowrap;
+            }
+            & + div {
+                margin-left: 15px;
+            }
+        }
+    }
+}
+.courses-card {
+    .nav-tabs {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+}
+.courses-table {
+    &.table-bottom-border {
+        & > tbody {
+            & > tr {
+                border-top: 1px dashed var(--border_color);
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                &:first-child {
+                    padding-left: 25px;
+                }
+            }
+            td:first-child {
+                min-width: 150px;
+            }
+            td:nth-child(3),
+            td:nth-child(2) {
+                min-width: 60px;
+            }
+            td:nth-child(4) {
+                min-width: 100px;
+            }
+            td:nth-child(5) {
+                min-width: 120px;
+            }
+        }
+    }
+    .position-relative{
+        span{
+            border: 1px dashed rgba(var(--dark), .2);
+        }
+    }
+}
+.education-courses-cards {
+    .icon-btn {
+        margin: -15px;
+    }
+    &:hover {
+        span {
+            i {
+                animation: flash 2s ease-in-out;
+            }
+        }
+    }
+}
+.learningchart-card {
+    .card-header {
+        border: none;
+    }
+}
+
+@media only screen and (max-width: 1550px) {
+    .overlay-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: rgba(41, 48, 86, 0.25);
+        backdrop-filter: blur(2px);
+        padding: 10px;
+        text-align: center;
+        z-index: 1;
+        color: var(--white);
+        p {
+            width: 100% !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 1200px) {
+    .education-card {
+        .education-image {
+            bottom: 0;
+            top: 0 !important;
+        }
+        p {
+            width: 200px !important;
+        }
+    }
+    .progress-card {
+        .text-content {
+            div {
+                p {
+                    white-space: nowrap;
+                    font-size: 12px;
+                }
+                & + div {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+
+    .courses-card {
+        .nav-tabs {
+            .nav-link {
+                padding: 8px 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 992px) {
+    .education-courses-cards {
+        .courses-icon {
+            width: 35px !important;
+            height: 35px !important;
+        }
+        p {
+            font-size: 12px;
+            font-weight: 400;
+            max-width: 80px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        h6 {
+            font-size: 14px;
+        }
+        .courses-btn {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    .progress-card {
+        .text-content {
+            div {
+                p {
+                    white-space: nowrap;
+                    font-size: 12px;
+                }
+                & + div {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+    .courses-card {
+        .nav-tabs {
+            .nav-link {
+                padding: 8px 15px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1550px) {
+    .overlay-card {
+        .header-heading {
+            color: var(--white) !important;
+        }
+        p {
+            color: var(--white) !important;
+            width: 100% !important;
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .education {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media screen and (max-width: 567px) {
+    .courses-card {
+        .nav-item,
+        .nav-link {
+            width: 100%;
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    .course-tab {
+        justify-content: space-between;
+        .tab-link {
+            span {
+                display: none;
+            }
+            i {
+                display: block !important;
+                font-size: 25px;
+                color: rgba(var(--secondary), 0.6);
+            }
+            &.active {
+                i {
+                    color: rgba(var(--primary), 1);
+                }
+            }
+        }
+    }
+    h6 {
+        font-size: 14px;
+    }
+    .user-list {
+        .user-image {
+            top: 0px;
+        }
+    }
+    .rating-content {
+        .rating-image {
+            top: 14px !important;
+        }
+    }
+    .courses-table-body {
+        padding: 16px 0px !important;
+    }
+}
+@media screen and (max-width: 400px) {
+    .education-card {
+        .education-image {
+            top: 0 !important;
+            left: 0;
+        }
+        p {
+            width: 200px !important;
+        }
+    }
+    .progress-card {
+        .text-content {
+            div {
+                p {
+                    font-size: 12px;
+                }
+                & + div {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
+
+//  Dark mode css
+[class="ltr dark"] {
+    .apexcharts-canvas svg {
+        .apexcharts-xaxis .apexcharts-xaxis-texts-g .apexcharts-xaxis-label,
+        .apexcharts-yaxis .apexcharts-yaxis-texts-g .apexcharts-yaxis-label {
+            fill: #fff;
+        }
+    }
+    .apexcharts-tooltip.apexcharts-theme-light {
+        border: 1px solid rgba(0, 0, 0, 0.21);
+        background: #333644;
+    }
+    .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+        background: #282a36;
+    }
+    .apexcharts-legend-text {
+        color: #fff !important;
+    }
+}
+
+// rtl css
+
+.rtl {
+    .apexcharts-canvas{
+        direction: ltr;
+    }
+    .education-card {
+        transform: scaleX(-1);
+        .overlay-card {
+            transform: scaleX(-1);
+        }
+        .education-image {
+            left: 0;
+            right: auto;
+        }
+    }
+    .float-end {
+        float: left !important;
+    }
+    .rating-content {
+        .rating-image {
+            left: auto !important;
+            right: 0 !important;
+        }
+        .mg-s-45 {
+            margin-right: 45px !important;
+            margin-left: auto !important;
+        }
+    }
+    .courses-table {
+        .ms-5 {
+            margin-right: 48px !important;
+        }
+    }
+    .apexcharts-legend-marker {
+        margin-left: 3px;
+    }
+}
+// >>-- 97 Educathion css ends --<<

@@ -1,0 +1,342 @@
+// >>-- 71 Misc css start --<<
+
+.bootstrap-breadcrumb{
+    --bs-breadcrumb-divider: '';
+    &.divider{
+        --bs-breadcrumb-divider: '>>'
+    }
+    &.divider1{
+        --bs-breadcrumb-divider: '>';
+    }
+}
+.line-breadcrumbs {
+    li {
+        display: inline-block;
+        &+li{
+            &::before {
+                content: "/";
+                color: var(--font-light-color);
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            &.active {
+                color: rgba(var(--primary), 1);
+            }
+            &:hover {
+                a {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+.breadcrumbs {
+    li {
+        display: inline-block;
+        &+li{
+            &::before {
+                font-family: "tabler-icons";
+                content: "\f60d";
+                color: var(--font-light-color);
+                padding-left: 8px;
+            }
+            &.active {
+                color: rgba(var(--primary), 1);
+            }
+        }
+    }
+
+}
+.breadcrumb {
+    flex-wrap: nowrap;
+    li{
+        display: inline-block;
+      &+li{
+        &::before {
+            font-family: "tabler-icons";
+            content: "\ea61";
+            padding-left: 8px;
+        }
+        &.active {
+            color: rgba(var(--secondary), 0.6);
+        }
+      }
+      i{
+        margin-right: 5px ;
+        line-height: 1.2;
+      }
+    }
+}
+
+.simple-breadcrumbs {
+    li {
+        display: inline-block;
+        padding: 5px 15px;
+        background: rgba(var(--light), 0.4);
+        transform: skew(-20deg);
+        cursor: pointer;
+        a {
+            display: block;
+            transform: skew(20deg);
+        }
+        &.active {
+            background: rgba(var(--primary), 1);
+            color: var(--white);
+        }
+    }
+}
+
+.shape-breadcrumbs {
+    li {
+        position: relative;
+        background: rgba(var(--light), 1);
+        padding: 5px 25px;
+        text-align: center;
+        color: var(--white);
+        display: inline-block;
+        margin-left: -10px;
+        :before,
+        :after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            z-index: 1;
+            border-right: 2px solid var(--white);
+            right: -2px;
+        }
+        :before {
+            bottom: 0;
+            transform: skewX(-45deg);
+        }
+        :after {
+            top: 0;
+            transform: skewX(45deg);
+        }
+        &:last-child {
+            :before,
+            :after {
+                display: none;
+            }
+        }
+        &.active {
+            background-color: rgba(var(--primary), 1);
+            :before,
+            :after {
+                background-color: rgba(var(--primary), 1);
+            }
+        }
+    }
+}
+@mixin circle_breadcrumbs_mixin($name, $color) {
+    .circle-breadcrumbs {
+        &.breadcrumbs-#{$name} {
+            li {
+                a {
+                    background-color: rgba(var(--secondary), 0.6); 
+                }
+                &.active {
+                    a {
+                        background: rgba(#{$color}, 1);
+                        color: var(--white);
+                    }
+                }
+            }
+        }
+    }
+    .outline-circle-breadcrumbs {
+        &.breadcrumbs-#{$name} {
+            li {
+                a {
+                    outline: 1px solid rgba(var(--secondary), 0.6);
+                    color: rgba(var(--secondary), 0.6);
+                }
+                &.active {
+                    a {
+                        outline: 1px solid rgba(var(--primary), 1);
+                        color: rgba(var(--primary), 0.6);
+                    }
+                }
+            }
+        }
+    }
+    .light-circle-breadcrumbs {
+        &.breadcrumbs-#{$name} {
+            li {
+                a {
+                    background-color: rgba(var(--secondary), 0.1);
+                    color: rgba(var(--secondary), 1);
+                }
+                &.active {
+                    a {
+                        background-color: rgba(var(--primary), 0.1);
+                        color: rgba(var(--primary), 1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@each $name, $color in $colors {
+    @include circle_breadcrumbs_mixin($name, map-get($colors, $name));
+}
+
+.circle-breadcrumbs,
+.outline-circle-breadcrumbs,
+.light-circle-breadcrumbs {
+    li {
+        display: inline-block;
+        position: relative;
+        margin: 0px 20px;   
+        a {
+            display: block;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            font-size: 14px;
+            text-align: center;
+            border-radius: 50%;
+            &::after {
+                content: ">";
+                position: absolute;
+                left: -25px;
+                font-size: 20px;
+            }
+        }
+        &:first-child{
+            a{
+                &::after {
+                    content: "";
+                }
+            }
+
+        }
+    }
+}
+
+/* Stepbar*/
+
+.stepbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 45px 0 50px;
+    &:before {
+        content: "";
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: var(--border_color);
+        z-index: 1;
+    }
+    .stepbar-step {
+        width: 35px;
+        height: 35px;
+        background-color: var(--border_color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        &:before {
+            counter-increment: step;
+            content: counter(step);
+        }
+        &.step-active {
+            background-color: rgba(var(--primary));
+            color: var(--white);
+        }
+    }
+}
+
+// pagination
+
+.simple-pagination,
+.outline-pagination,
+.light-pagination {
+    li {
+        display: inline;
+        a {
+            display: inline-block;
+            padding: 5px 10px;
+        }
+    }
+}
+
+.circle-pagination,
+.outline-circle-pagination,
+.light-circle-pagination {
+    display: flex;
+    justify-content: end;
+    li {
+        display: inline-block;
+        padding: 0px 2px;
+        a {
+            display: inline-block;
+            line-height: 35px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-align: center;
+        }
+    }
+}
+
+@mixin circle_pagination_mixin($name, $color) {
+    .simple-pagination,
+    .circle-pagination {
+        &.pagination-#{$name} {
+            li {
+                a {
+                    background-color: rgba(var(--secondary), 0.4);
+                    color: var(--black);
+                    &.active {
+                        background-color: rgba(#{$color}, 1);
+                        color: var(--white);
+                    }
+                }
+            }
+        }
+    }
+    .outline-pagination,
+    .outline-circle-pagination {
+        &.pagination-#{$name} {
+            li {
+                a {
+                    outline: 1px solid rgba(var(--secondary), 0.6);
+                    color: var(--black);
+                    &.active {
+                        outline: 1px solid rgba(#{$color}, 1);
+                        color: rgba(#{$color}, 1);
+                    }
+                }
+            }
+        }
+    }
+    .light-pagination,
+    .light-circle-pagination {
+        &.pagination-#{$name} {
+            li {
+                a {
+                    background-color: rgba(var(--secondary), 0.1);
+                    color: rgba(var(--secondary), 1);
+                    &.active {
+                        background-color: rgba(#{$color}, 0.1);
+                        color: rgba(#{$color}, 1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@each $name, $color in $colors {
+    @include circle_pagination_mixin($name, map-get($colors, $name));
+}
+
+// >>-- 71 Misc css end --<<
+

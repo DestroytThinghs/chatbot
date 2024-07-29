@@ -1,0 +1,135 @@
+// >>-- 45 Helper_classes css start --<<
+
+@mixin text_mixin($name, $color) {
+  .text-#{$name} {
+    color: rgba(#{$color}, 1) !important;
+    &:hover {
+      color: rgba(#{$color}, 0.8) !important;
+      cursor: pointer;
+    }
+  }
+  .link-#{$name} {
+    color: rgba(#{$color}, 1) !important;
+    &:hover {
+      color: rgba(#{$color}, 0.8) !important;
+      cursor: pointer;
+    }
+  }
+  .txt-bg-#{$name} {
+    background-color: rgba(#{$color}, 0.1) !important ;
+    color: rgba(#{$color}, 1) !important;
+    &:hover {
+      color: rgba(#{$color}, 0.8) !important;
+      cursor: pointer;
+    }
+  }
+}
+@each $name, $color in $colors {
+  @include text_mixin($name, map-get($colors, $name));
+}
+
+// font weight
+$unit: "px"; // Feel free to change the unit.
+@mixin font-loop($classname, $stylename, $max, $offset) {
+  $i: 0;
+  @while $i <= $max {
+    #{$classname + $i} {
+      #{$stylename}: #{$i} !important;
+    }
+
+    $i: $i + $offset;
+  }
+}
+
+@include font-loop(".f-fw-", "font-weight", 900, 100);
+
+// font style
+.f-fs-normal {
+  font-style: normal;
+}
+.f-fs-italic {
+  font-style: italic;
+}
+.f-fs-oblique {
+  font-style: oblique;
+}
+.f-fs-initial {
+  font-style: initial;
+}
+.f-fs-inherit {
+  font-style: inherit;
+}
+
+//  text decoration
+.text-d-underline {
+  text-decoration: underline;
+}
+.text-d-line-through {
+  text-decoration: line-through;
+}
+.text-d-overline {
+  text-decoration: overline;
+}
+.text-d-overline-underline {
+  text-decoration: underline overline;
+}
+.text-d-line-underline {
+  text-decoration: underline line-through;
+}
+
+//  border
+.border {
+  border: 1px solid var(--border_color) !important;
+}
+.border-t {
+  border-top: 1px solid var(--border_color);
+}
+.border-b {
+  border-bottom: 1px solid var(--border_color);
+}
+.border-s {
+  border-left: 1px solid var(--border_color);
+}
+.border-e {
+  border-right: 1px solid var(--border_color);
+}
+
+.border-0 {
+  border: none;
+}
+.border-t-0 {
+  border: none;
+  border-top: 1px solid var(--border_color);
+}
+.border-b-0 {
+  border: 1px solid var(--border_color);
+  border-bottom: none;
+}
+.border-s-0 {
+  border: 1px solid var(--border_color);
+  border-left: none;
+}
+.border-e-0 {
+  border: 1px solid var(--border_color);
+  border-right: none;
+}
+
+.app-example
+[class^=b] {
+  text-align: center;
+  display: inline-block;
+  width: 150px;
+  height: 120px;
+  background-color: rgb(var(--light),0.1);
+  margin: 0.25rem;
+  padding: 50px 0 !important;
+}
+.app-example{
+  img{
+    width: 160px;
+    height: 120px;
+    margin: 0.25rem;
+  }
+}
+
+// >>-- 45 Helper_classes css end --<<

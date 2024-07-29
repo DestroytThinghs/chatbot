@@ -1,0 +1,52 @@
+// >>-- 89 Invoice css start --<<
+
+.invoice-table{
+    .line-total,
+    .unit-cost{
+        min-width: 100px;
+    }
+    .items{
+        min-width: 240px;
+    }
+}
+
+@media print {
+    .invoice-footer,
+    footer,
+    header,
+    nav{
+        display: none;
+        margin: 0 !important;
+        padding:0 !important;
+    }
+    main{
+        width: 100%;
+        padding: 0px;
+        .container{
+            max-width: 100%;
+            padding: 0;
+        }
+    }
+    .app-wrapper {
+        .app-content{
+            padding: 0px;
+            .go-top{
+                display: none !important;
+            }
+            .invoice-container{
+                .main-title,
+                .breadcrumb{
+                    display: none;
+                }
+            }
+        }
+    }
+    .customizer-btn{
+        display: none;
+    }
+    
+}
+
+
+
+// >>-- 89 Invoice css end --<<

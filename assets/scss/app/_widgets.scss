@@ -1,0 +1,61 @@
+// >>-- 98 Widgets css start --<<
+
+
+.countries-overflow{
+    height: 350px;
+}
+.countries-campaign{
+    height: 320px;
+}
+@media only screen and (max-width: 767px){
+    .upgrade-premium{
+     .analytics-premium {
+      flex-direction: row;
+     }
+     
+   }
+   .dynamic-courses{
+   .courses-wrap{
+    flex-wrap: wrap;       
+   }
+   }
+   .scheduled-tasks{
+    .col-7{
+        width: 83.33333333%;
+    }
+    .tasks-none{
+        display: none !important;
+    }
+   }
+ }
+ @media only screen and (max-width: 480px){
+    .upgrade-premium{
+        .analytics-premium{
+            flex-direction: column;
+        }
+    }
+    .table-title-text{
+        width: 100px;
+        margin: 0px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical    ;
+        overflow: hidden;
+    }
+ }
+ @media only screen and (min-width: 1400px) and (max-width: 1660px){
+    .order-focus{
+        .actions-projects{
+            display: none;
+        }
+    }
+ }
+ @media only screen and (max-width: 1400px){
+    .schedule-dashboard{
+        .col-12 {
+            display: none;
+        }
+    }
+ }
+
+ // >>-- 98 Widgets css end --<<

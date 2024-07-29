@@ -1,0 +1,456 @@
+// >>-- 92 Project_dashboard css start --<<
+
+.project-cards {
+    h6 {
+        font-weight: 600;
+        color: rgba(var(--dark), 0.75);
+    }
+    p{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+    &:hover {
+        .project-card-icon {
+            i {
+                animation: flipInY 1s ease-in-out;
+            }
+        }
+    }
+}
+
+
+.budget-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.budget-table {
+    tr {
+        h6 {
+            color: rgba(var(--dark), 0.8);
+            font-weight: 600;
+        }
+        &:hover {
+            span {
+                i {
+                    animation: heartBeat 2s ease-in-out infinite;
+                }
+            }
+        }
+    }
+}
+.project-team-table {
+    &.table-bottom-border {
+        & > tbody {
+            & > tr {
+                border-top: 1px dashed var(--border_color);
+            }
+        }
+    }
+    thead {
+        tr {
+            th {
+                padding: 16px 0;
+                color: rgba(var(--dark), 0.8);
+                font-weight: 600;
+                font-size: 16px;
+                &:first-child {
+                    padding-left: 25px;
+                }
+            }
+            th:nth-child(1) {
+                min-width: 230px;
+            }
+            th:nth-child(2) {
+                min-width: 50px;
+            }
+            th:nth-child(3),
+            th:nth-child(4) {
+                min-width: 100px;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                color: rgba(var(--dark), 0.8);
+                font-size: 15px;
+                h6 {
+                    color: rgba(var(--dark), 0.8);
+                    font-weight: 500;
+                    margin-bottom: 0;
+                }
+                &:first-child {
+                    padding-left: 25px;
+                }
+            }
+        }
+    }
+    tr {
+        &:hover {
+            td {
+                h6 {
+                    color: rgba(var(--primary), 1);
+                }
+                .active-status {
+                    animation: zoomIn 1s ease-in-out infinite;
+                }
+            }
+        }
+    }
+}
+.app-calendar {
+    .calendar {
+        .pignose-calendar {
+            background-color: var(--white);
+            width: 100% !important;
+            max-width: 100% !important;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--bs-border-radius);
+            border: none;
+            .pignose-calendar-top {
+                box-shadow: none;
+                background-color: var(--white);
+                border-radius: 5px 5px 0 0;
+                .pignose-calendar-top-month {
+                    color: rgba(var(--secondary), 1);
+                }
+            }
+            .pignose-calendar-unit {
+                a {
+                    color: rgba(var(--dark), 1);
+                    box-shadow: none;
+                    font-weight: 500;
+                }
+                &.pignose-calendar-unit-active {
+                    a {
+                        background-color: rgba(var(--primary), 1);
+                        color: var(--white);
+                    }
+                }
+                &:hover {
+                    a {
+                        background-color: rgba(var(--primary), 0.1);
+                        color: rgba(var(--primary), 1);
+                    }
+                }
+            }
+            .pignose-calendar-header {
+                color: rgba(var(--secondary), 1);
+                margin-top: 0;
+                .pignose-calendar-week {
+                    &.pignose-calendar-week-sat,
+                    &.pignose-calendar-week-sun {
+                        color: rgba(var(--secondary), 1);
+                    }
+                }
+            }
+            .pignose-calendar-body {
+                height: 325px;
+                padding: 15px;
+            }
+            .icon-arrow-right {
+                &:before {
+                    font-family: "tabler-icons" !important;
+                    content: "\ea61";
+                }
+            }
+            .icon-arrow-left {
+                &:before {
+                    font-family: "tabler-icons" !important;
+                    content: "\ea60";
+                }
+            }
+        }
+    }
+}
+.document-list {
+    li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 12px;
+        transition: var(--app-transition);
+        h6 {
+            color: rgba(var(--dark), 0.8);
+            font-weight: 600;
+        }
+        & + li {
+            border-top: 1px dashed var(--border_color);
+        }
+        &:hover {
+            h6 {
+                color: rgba(var(--primary), 1);
+            }
+        }
+    }
+}
+.project-table {
+    .check-box {
+        margin-bottom: 0;
+        .checkmark {
+            width: 16px;
+            height: 16px;
+            &:before {
+                font-size: 12px;
+                line-height: 12px;
+                top: 7px;
+                left: 9px;
+            }
+        }
+    }
+    .dataTables_wrapper {
+        table {
+            border-top: 1px dashed var(--border_color);
+            border-bottom: 1px dashed var(--border_color);
+            &.dataTable {
+                &.display > tbody > tr.even > .sorting_1,
+                &.display > tbody > tr.odd > * {
+                    box-shadow: none;
+                }
+                &.display > tbody > tr:hover > * {
+                    box-shadow: none;
+                }
+            }
+            &.order-column.stripe > tbody > tr.even > .sorting_1 {
+                box-shadow: none;
+            }
+            thead {
+                th {
+                    color: rgba(var(--dark), 0.8);
+                    font-weight: 600;
+                    &.sorting {
+                        &:before,
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
+                th,
+                td {
+                    border: none;
+                }
+            }
+            tbody {
+                td {
+                    border: none;
+                    color: rgba(var(--dark), 0.8);
+                    font-size: 14px;
+                    h6 {
+                        color: rgba(var(--dark), 0.8);
+                        font-weight: 600;
+                        margin-bottom: 0;
+                    }
+                }
+                tr {
+                    .odd {
+                        &.selected {
+                            background-color: var(--white) !important;
+                        }
+                    }
+                    &:hover {
+                        background-color: rgba(var(--light), 0.1);
+                        h6 {
+                            color: rgba(var(--primary), 1);
+                        }
+                        td:nth-child(5) {
+                            color: rgba(var(--success), 1);
+                        }
+                        td:nth-child(6) {
+                            color: rgba(var(--danger), 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        .dataTables_length {
+            margin: 1rem;
+            select {
+                color: rgba(var(--secondary), 1);
+                font-size: 14px;
+                padding: 0.4rem 0.75rem;
+                border: 1px solid var(--border_color) !important;
+            }
+        }
+        .dataTables_filter {
+            margin: 1rem;
+            input {
+                padding: 0.4rem 0.75rem;
+                border: 1px solid var(--border_color) !important;
+                margin-bottom: 0 !important;
+                &:focus {
+                    color: rgba(var(--dark), 1);
+                    box-shadow: 0 0 0 0.25rem rgba(var(--primary), 0.3);
+                    border: 1px solid rgba(var(--primary), 1);
+                }
+                &:focus-visible{
+                    outline: none;
+                }
+            }
+        }
+        .dataTables_paginate,
+        .dataTables_info {
+            margin: 1rem;
+            color: rgba(var(--secondary), 1);
+        }
+    }
+    table {
+        thead {
+            tr {
+                th:first-child {
+                    min-width: 25px;
+                }
+                th:nth-child(2) {
+                    min-width: 150px;
+                }
+                th:nth-child(3) {
+                    min-width: 100px;
+                }
+                th:nth-child(5),
+                th:nth-child(6) {
+                    min-width: 100px;
+                }
+            }
+        }
+    }
+}
+
+.project-transaction-table {
+    tr {
+        h6 {
+            color: rgba(var(--dark), 0.8);
+            font-weight: 600;
+        }
+        &:hover {
+            h6 {
+                color: rgba(var(--primary), 1);
+            }
+            i {
+                animation: rubberBand 1s ease-in-out infinite;
+            }
+        }
+    }
+}
+.project-report-card {
+    height: 250px;
+    overflow: hidden;
+}
+@media only screen and (max-width: 1440px) and (min-width: 992px) {
+    .project-cards {
+        h6 {
+            font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 1366px) and (min-width: 1200px) {
+    .budget-card {
+        img {
+            display: none;
+        }
+    }
+    .budget-table {
+        .text-end {
+            i {
+                display: none;
+            }
+        }
+    }
+    .project-overview-card {
+        canvas {
+            height: 150px !important;
+        }
+
+        .btn-group {
+            display: none !important;
+        }
+    }
+    .budget-card{
+        padding: 20px 0;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .cradit-image {
+        display: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    .project-report-card {
+        height: auto;
+    }
+    .project-cards{
+        p{
+            font-size: 12px;
+        }
+    }
+}
+
+// dark mode
+
+[class="ltr dark"] {
+    .app-calendar {
+        .pignose-calendar {
+            background-color: transparent;
+        }
+    }
+}
+
+// rtl css
+
+.rtl {
+    .project-transaction-table,
+    .budget-table,
+    .project-team-table {
+        .ms-5 {
+            margin-right: 48px !important;
+        }
+    }
+    .project-team-table {
+        thead{
+            tr{
+                th{
+                    &:first-child {
+                        padding-right: 25px;
+                        padding-left: 0;
+                    }
+                }
+            }
+        } 
+        tbody{
+            tr{
+                td{
+                    &:first-child {
+                        padding-right: 25px;
+                        padding-left: 0;
+                    }
+                }
+            }
+        } 
+        
+    }
+    .project-table {
+        .dataTables_wrapper{
+            table{
+                tbody{
+                    tr{
+                        td{
+                            &:first-child{
+                                padding-right: 26px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .document-list{
+        .ps-2 {
+            padding-right: 0.5rem !important;
+        }
+    }
+}
+// >>-- 92 Project_dashboard css end --<<
